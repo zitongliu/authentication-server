@@ -7,7 +7,10 @@ const morgan = require('morgan');
 const app = express();
 
 // App Setup - getting express working
-
+// morgan used to log requests
+app.use(morgan('combined'));
+// parse incoming request
+app.use(bodyParser.json({type: '*/*'}));
 
 // Server Setup - getting express to talk to outside world
 const port = process.env.PORT || 3090;
