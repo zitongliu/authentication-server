@@ -6,6 +6,10 @@ const morgan = require('morgan');
 // instance of express
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+// DB Setup
+mongoose.connect('mongodb://localhost:auth/auth');
 
 // App Setup - getting express working
 // morgan used to log requests
